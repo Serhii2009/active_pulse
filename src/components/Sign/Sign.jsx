@@ -21,7 +21,9 @@ const Sign = () => {
 
         <div className="sign-container-chose-list">
           <div className="sign-container-chose-email">Email address</div>
-          <div className="sign-container-chose-phone">Phone number</div>
+          <Link to="/phone-signup">
+            <div className="sign-container-chose-phone">Phone number</div>
+          </Link>
         </div>
 
         <div className="sign-container-form">

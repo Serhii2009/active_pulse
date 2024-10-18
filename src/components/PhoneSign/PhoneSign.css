@@ -1,0 +1,226 @@
+/* Phone display */
+
+.phone-sign_form_close {
+  margin-left: 283px;
+  margin-top: 16px;
+}
+
+.phone-sign {
+  width: 323px;
+  height: 557px;
+  border-radius: 24px;
+  background-color: #f1fff2;
+  margin: 60px auto;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.phone-sign-container-title {
+  font-size: 26px;
+  color: #2f3233;
+  font-weight: 500;
+  padding-left: 36px;
+}
+
+.phone-sign-container-description {
+  font-size: 14px;
+  color: #7d7d7d;
+  font-weight: 400;
+  margin-top: 16px;
+  padding-left: 36px;
+  padding-right: 31px;
+}
+
+.phone-sign-container-chose-list {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  padding-left: 35px;
+}
+
+.phone-sign-container-chose-email {
+  padding: 8px 13px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #7d7d7d;
+  border-bottom: 2px solid #b6ffd7;
+}
+
+.phone-sign-container-chose-phone {
+  padding: 8px 13px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2f3233;
+  border-bottom: 2px solid #7dde92;
+}
+
+.phone-sign-container-form {
+  margin-top: 16px;
+  padding-left: 35px;
+}
+
+.phone-sign-container-form-country-num {
+  width: 100px;
+  height: 48px;
+  border-radius: 24px;
+  border: 1px solid #05b556;
+  background-color: #f1fff2;
+  padding-left: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-sign-container-form-country-num:focus {
+  box-shadow: 0 0 8px rgba(5, 181, 86, 0.5);
+}
+
+.phone-sign-container-form-personal-num {
+  width: 146px;
+  height: 48px;
+  border-radius: 24px;
+  border: 1px solid #05b556;
+  background-color: #f1fff2;
+  margin-left: 8px;
+  padding-left: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-sign-container-form-personal-num:focus {
+  box-shadow: 0 0 8px rgba(5, 181, 86, 0.5);
+}
+
+.phone-sign-container-form-varify {
+  width: 254px;
+  height: 48px;
+  border-radius: 24px;
+  border: 1px solid #05b556;
+  background-color: #f1fff2;
+  margin-top: 16px;
+  padding-left: 60px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-sign-container-form-varify:focus {
+  box-shadow: 0 0 8px rgba(5, 181, 86, 0.5);
+}
+
+.phone-sign-container-form-button {
+  margin-top: 16px;
+  width: 254px;
+  height: 48px;
+  border-radius: 24px;
+  background-color: #ff6f61;
+  padding-top: 14px;
+  padding-left: 96px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+.phone-sign-container-form-button:hover {
+  transform: scale(1.04);
+  transition: 0.3s;
+}
+
+.phone-sign-container-policy {
+  margin-top: 40px;
+  margin-left: 23px;
+  margin-right: 23px;
+  color: #7d7d7d;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.phone-sign-container-policy span {
+  color: #2f3233;
+}
+
+.phone-sign-container-login {
+  margin-top: 10px;
+  text-align: center;
+  color: #2f3233;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.phone-sign-container-login a {
+  text-decoration: underline;
+  color: #2f3233;
+  font-weight: 500;
+}
+
+/* Tablet display */
+
+@media only screen and (min-width: 768px) {
+  .phone-sign_form_close {
+    margin-left: 396px;
+  }
+
+  .phone-sign {
+    width: 436px;
+  }
+
+  .phone-sign-container-title {
+    font-size: 32px;
+    padding-left: 56px;
+  }
+
+  .phone-sign-container-description {
+    padding-left: 56px;
+    padding-right: 60px;
+  }
+
+  .phone-sign-container-chose-list {
+    margin-top: 24px;
+    padding-left: 56px;
+  }
+
+  .phone-sign-container-chose-email {
+    padding: 8px 30px;
+  }
+
+  .phone-sign-container-chose-phone {
+    padding: 8px 30px;
+  }
+
+  .phone-sign-container-form {
+    margin-top: 16px;
+    padding-left: 56px;
+  }
+
+  .phone-sign-container-form-country-num {
+    width: 120px;
+  }
+
+  .phone-sign-container-form-personal-num {
+    width: 196px;
+  }
+
+  .phone-sign-container-form-varify {
+    width: 324px;
+    padding-left: 90px;
+  }
+
+  .phone-sign-container-form-button {
+    width: 324px;
+    padding-left: 132px;
+  }
+
+  .phone-sign-container-policy {
+    margin-top: 40px;
+    margin-left: 56px;
+    margin-right: 56px;
+  }
+
+  .phone-sign-container-login {
+    margin-top: 16px;
+  }
+}
+
+/* Desctop display */
+
+/* The same as a Tablet version */
