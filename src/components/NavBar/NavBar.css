@@ -43,6 +43,11 @@
   cursor: pointer;
 }
 
+.nav-bar-sign-up:hover {
+  transform: scale(1.04);
+  transition: 0.3s;
+}
+
 .nav-bar-log-in {
   padding: 6px 14px;
   background-color: #003f91;
@@ -51,6 +56,11 @@
   font-weight: 500;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.nav-bar-log-in:hover {
+  transform: scale(1.04);
+  transition: 0.3s;
 }
 
 .nav-bar_cta {

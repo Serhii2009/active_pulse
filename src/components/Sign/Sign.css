@@ -1,3 +1,5 @@
+/* Phone display */
+
 .sign_form_close {
   margin-left: 283px;
   margin-top: 16px;
@@ -64,16 +66,6 @@
   background-color: #f1fff2;
   padding-left: 16px;
   outline: none;
-}
-
-.sign-container-form-email {
-  width: 254px;
-  height: 48px;
-  border-radius: 24px;
-  border: 1px solid #05b556;
-  background-color: #f1fff2;
-  padding-left: 16px;
-  outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -112,6 +104,11 @@
   cursor: pointer;
 }
 
+.sign-container-form-button:hover {
+  transform: scale(1.04);
+  transition: 0.3s;
+}
+
 .sign-container-policy {
   margin-top: 40px;
   margin-left: 23px;
@@ -139,3 +136,70 @@
   color: #2f3233;
   font-weight: 500;
 }
+
+/* Tablet display */
+
+@media only screen and (min-width: 768px) {
+  .sign_form_close {
+    margin-left: 396px;
+  }
+
+  .sign {
+    width: 436px;
+  }
+
+  .sign-container-title {
+    font-size: 32px;
+    padding-left: 56px;
+  }
+
+  .sign-container-description {
+    padding-left: 56px;
+    padding-right: 60px;
+  }
+
+  .sign-container-chose-list {
+    margin-top: 24px;
+    padding-left: 56px;
+  }
+
+  .sign-container-chose-email {
+    padding: 8px 30px;
+  }
+
+  .sign-container-chose-phone {
+    padding: 8px 30px;
+  }
+
+  .sign-container-form {
+    margin-top: 16px;
+    padding-left: 56px;
+  }
+
+  .sign-container-form-email {
+    width: 324px;
+  }
+
+  .sign-container-form-password {
+    width: 324px;
+  }
+
+  .sign-container-form-button {
+    width: 324px;
+    padding-left: 132px;
+  }
+
+  .sign-container-policy {
+    margin-top: 40px;
+    margin-left: 56px;
+    margin-right: 56px;
+  }
+
+  .sign-container-login {
+    margin-top: 16px;
+  }
+}
+
+/* Desctop display */
+
+/* The same as a Tablet version */

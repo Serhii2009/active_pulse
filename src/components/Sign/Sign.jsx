@@ -1,11 +1,18 @@
 import './Sign.css'
 import { assets } from '../../assets/assets'
+import { Link } from 'react-router-dom'
 
 const Sign = () => {
   return (
     <div className="sign">
       <div className="sign-container">
-        <img src={assets.sign_form_close} alt="" className="sign_form_close" />
+        <Link to="/">
+          <img
+            src={assets.sign_form_close}
+            alt=""
+            className="sign_form_close"
+          />
+        </Link>
         <p className="sign-container-title">Sign up</p>
         <p className="sign-container-description">
           Signing up with a registered phone number or social account will log
