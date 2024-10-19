@@ -35,7 +35,10 @@ const NavBar = () => {
             <Link to="/signup">
               <div className="nav-bar-sign-up">Sign Up</div>
             </Link>
-            <div className="nav-bar-log-in">Log In</div>
+
+            <Link to="/login">
+              <div className="nav-bar-log-in">Log In</div>
+            </Link>
           </div>
           <img
             onClick={toggleModal}
