@@ -41,7 +41,10 @@ const UserLogin = () => {
           <div className="user-login-container-form-button">Log in</div>
         </div>
         <p className="user-login-container-login">
-          No account yet? <a href="">Sing up</a>
+          No account yet?{' '}
+          <Link to="/signup">
+            <span>Sing up</span>
+          </Link>
         </p>
       </div>
     </div>

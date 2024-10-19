@@ -51,7 +51,10 @@ const PhoneUserLogin = () => {
         </div>
 
         <p className="phone-login-container-login">
-          No account yet? <a href="">Sing up</a>
+          No account yet?{' '}
+          <Link to="/signup">
+            <span>Sing up</span>
+          </Link>
         </p>
       </div>
     </div>

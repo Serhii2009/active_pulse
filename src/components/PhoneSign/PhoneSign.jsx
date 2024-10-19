@@ -54,7 +54,10 @@ const PhoneSign = () => {
           and <span>Privacy Policy.</span>
         </p>
         <p className="phone-sign-container-login">
-          Already have an account? <a href="">Log in</a>
+          Already have an account?{' '}
+          <Link to="/login">
+            <span>Log in</span>
+          </Link>
         </p>
       </div>
     </div>
