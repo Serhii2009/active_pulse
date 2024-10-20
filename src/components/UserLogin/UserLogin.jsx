@@ -5,21 +5,30 @@ import { useState } from 'react'
 import axios from 'axios'
 
 const UserLogin = () => {
-  const [email, setEmail] = useState()
-  const [password, setPassword] = useState()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    axios
-      .post('http://localhost:3001/login', { email, password })
-      .then((result) => {
-        console.log(result)
-        if (result.data === 'Success') {
-          navigate('/home')
-        }
+    try {
+      const result = await axios.post('http://localhost:3001/login', {
+        email,
+        password,
       })
-      .catch((err) => console.log(err))
+      console.log(result)
+
+      // Перевіряємо, чи отримали ми токен
+      if (result.data.token) {
+        // Зберігаємо токен у localStorage
+        localStorage.setItem('token', result.data.token)
+        navigate('/personal-cabinet') // Перенаправляємо на головну сторінку
+      } else {
+        console.error(result.data) // Виводимо помилку, якщо не отримали токен
+      }
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
@@ -71,7 +80,7 @@ const UserLogin = () => {
         <p className="user-login-container-login">
           No account yet?{' '}
           <Link to="/signup">
-            <span>Sing up</span>
+            <span>Sign up</span>
           </Link>
         </p>
       </div>
