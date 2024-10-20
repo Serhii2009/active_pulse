@@ -1,8 +1,27 @@
 import './UserLogin.css'
 import { assets } from '../../assets/assets'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import axios from 'axios'
 
 const UserLogin = () => {
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+  const navigate = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios
+      .post('http://localhost:3001/login', { email, password })
+      .then((result) => {
+        console.log(result)
+        if (result.data === 'Success') {
+          navigate('/home')
+        }
+      })
+      .catch((err) => console.log(err))
+  }
+
   return (
     <div className="user-login">
       <div className="user-login-container">
@@ -26,20 +45,29 @@ const UserLogin = () => {
           </Link>
         </div>
 
-        <div className="user-login-container-form">
+        <form className="user-login-container-form" onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="Email address"
             className="user-login-container-form-email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <input
             type="password"
             placeholder="Password"
             className="user-login-container-form-password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
           />
 
-          <div className="user-login-container-form-button">Log in</div>
-        </div>
+          <div
+            className="user-login-container-form-button"
+            onClick={handleSubmit}
+          >
+            Log in
+          </div>
+        </form>
         <p className="user-login-container-login">
           No account yet?{' '}
           <Link to="/signup">

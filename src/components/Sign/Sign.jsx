@@ -1,8 +1,26 @@
 import './Sign.css'
 import { assets } from '../../assets/assets'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import axios from 'axios'
 
 const Sign = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios
+      .post('http://localhost:3001/register', { name, email, password }) // Передаємо об'єкт з даними
+      .then((result) => {
+        console.log(result)
+        navigate('/login')
+      })
+      .catch((err) => console.log(err))
+  }
+
   return (
     <div className="sign">
       <div className="sign-container">
@@ -26,25 +44,35 @@ const Sign = () => {
           </Link>
         </div>
 
-        <div className="sign-container-form">
+        <form className="sign-container-form" onSubmit={handleSubmit}>
           <input
             type="name"
             placeholder="Name"
             className="sign-container-form-name"
+            onChange={(e) => setName(e.target.value)}
+            required
           />
+
           <input
             type="email"
             placeholder="Email address"
             className="sign-container-form-email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
+
           <input
             type="password"
             placeholder="Password"
             className="sign-container-form-password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
           />
 
-          <div className="sign-container-form-button">Sign up</div>
-        </div>
+          <div className="sign-container-form-button" onClick={handleSubmit}>
+            Sign up
+          </div>
+        </form>
         <p className="sign-container-policy">
           By creating an account, you accept our <span>Terms of Service</span>{' '}
           and <span>Privacy Policy.</span>
