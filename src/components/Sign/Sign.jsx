@@ -28,6 +28,11 @@ const Sign = () => {
 
         <div className="sign-container-form">
           <input
+            type="name"
+            placeholder="Name"
+            className="sign-container-form-name"
+          />
+          <input
             type="email"
             placeholder="Email address"
             className="sign-container-form-email"

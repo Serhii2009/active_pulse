@@ -30,6 +30,12 @@ const PhoneSign = () => {
 
         <div className="phone-sign-container-form">
           <input
+            type="name"
+            placeholder="Name"
+            className="phone-sign-container-form-name"
+          />
+
+          <input
             type="text"
             placeholder="+000"
             className="phone-sign-container-form-country-num"

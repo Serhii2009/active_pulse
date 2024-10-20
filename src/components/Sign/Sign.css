@@ -7,10 +7,10 @@
 
 .sign {
   width: 323px;
-  height: 557px;
+  height: 610px;
   border-radius: 24px;
   background-color: #f1fff2;
-  margin: 60px auto;
+  margin: 40px auto;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -58,7 +58,23 @@
   padding-left: 35px;
 }
 
+.sign-container-form-name {
+  width: 254px;
+  height: 48px;
+  border-radius: 24px;
+  border: 1px solid #05b556;
+  background-color: #f1fff2;
+  padding-left: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sign-container-form-name:focus {
+  box-shadow: 0 0 8px rgba(5, 181, 86, 0.5);
+}
+
 .sign-container-form-email {
+  margin-top: 16px;
   width: 254px;
   height: 48px;
   border-radius: 24px;
@@ -176,6 +192,10 @@
     padding-left: 56px;
   }
 
+  .sign-container-form-name {
+    width: 324px;
+  }
+
   .sign-container-form-email {
     width: 324px;
   }
@@ -201,5 +221,8 @@
 }
 
 /* Desctop display */
-
-/* The same as a Tablet version */
+@media only screen and (min-width: 1440px) {
+  .sign {
+    margin: 30px auto;
+  }
+}
