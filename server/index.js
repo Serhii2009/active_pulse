@@ -17,7 +17,6 @@ app.use(cors())
 mongoose.connect(process.env.DATABASE_URL)
 
 // Секретний ключ для підпису токенів (бажано зберігати в env)
-const JWT_SECRET = 'your_jwt_secret_key'
 
 app.post('/register', async (req, res) => {
   const { email, password } = req.body
@@ -47,9 +46,13 @@ app.post('/login', async (req, res) => {
   }
 
   // Створення JWT токену
-  const token = jwt.sign({ id: user._id, email: user.email }, JWT_SECRET, {
-    expiresIn: '1h', // токен дійсний 1 годину
-  })
+  const token = jwt.sign(
+    { id: user._id, email: user.email },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: '1h', // токен дійсний 1 годину
+    }
+  )
 
   res.json({ message: 'Success', token })
 })
@@ -61,7 +64,7 @@ const authenticateToken = (req, res, next) => {
 
   if (!token) return res.sendStatus(401)
 
-  jwt.verify(token, JWT_SECRET, (err, user) => {
+  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) return res.sendStatus(403)
     req.user = user
     next()

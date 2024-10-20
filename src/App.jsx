@@ -7,6 +7,7 @@ import PhoneSignUp from './pages/PhoneSignUp/PhoneSignUp'
 import LogIn from './pages/LogIn/LogIn'
 import PhoneLogIn from './pages/PhoneLogIn/PhoneLogIn'
 import PersonalCabinet from './pages/PersonalCabinet/PersonalCabinet'
+// import ProtectedRoute from './components/ProtectedRoute'
 
 const App = () => {
   return (
@@ -20,6 +21,15 @@ const App = () => {
           <Route path="/login" element={<LogIn />} />
           <Route path="/phone-login" element={<PhoneLogIn />} />
           <Route path="/personal-cabinet" element={<PersonalCabinet />} />
+
+          {/* <Route
+            path="/personal-cabinet"
+            element={
+              <ProtectedRoute>
+                <PersonalCabinet />
+              </ProtectedRoute>
+            }
+          /> */}
         </Routes>
       </Router>
     </div>
