@@ -12,18 +12,13 @@ const useLogin = () => {
     try {
       setError(null)
       setLoading(true)
-      const res = await fetch(
-        'https://active-pulse-ten.vercel.app/api/auth/login',
-        {
-          //http://localhost:3000/
-
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(values),
-        }
-      )
+      const res = await fetch('http://localhost:3000/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
 
       const data = await res.json()
       console.log('Response data:', data)
