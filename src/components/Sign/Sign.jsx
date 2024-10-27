@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import useSignup from '../../hooks/useSignup'
 
 const Sign = () => {
-  const { registerUser } = useSignup()
+  const { registerUser, loading } = useSignup()
 
   const handleRegister = (event) => {
     event.preventDefault()
@@ -61,8 +61,12 @@ const Sign = () => {
             required
           />
 
-          <button type="submit" className="sign-container-form-button">
-            Sign up
+          <button
+            type="submit"
+            className="sign-container-form-button"
+            disabled={loading}
+          >
+            {loading ? 'Signing up...' : 'Sign up'}
           </button>
         </form>
         <p className="sign-container-policy">

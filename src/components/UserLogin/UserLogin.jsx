@@ -65,7 +65,7 @@ const UserLogin = () => {
           <button
             type="submit"
             className="user-login-container-form-button"
-            disabled={loading} // Заблокувати кнопку при завантаженні
+            disabled={loading}
           >
             {loading ? 'Logging in...' : 'Log in'}
           </button>
