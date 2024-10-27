@@ -1,5 +1,14 @@
+import { useAuth } from '../../contexts/AuthContext'
+
 const PersonalCabinet = () => {
-  return <div>PersonalCabinet</div>
+  const { logout } = useAuth()
+
+  return (
+    <div>
+      <p>PersonalCabinet</p>
+      <button onClick={logout}>Log Out</button>
+    </div>
+  )
 }
 
 export default PersonalCabinet

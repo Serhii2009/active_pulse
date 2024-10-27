@@ -1,16 +1,26 @@
 import './UserLogin.css'
 import { assets } from '../../assets/assets'
-import { Link } from 'react-router-dom'
-// import { useState } from 'react'
-// import axios from 'axios'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import useLogin from '../../hooks/useLogin'
 
 const UserLogin = () => {
-  // const [email, setEmail] = useState('')
-  // const [password, setPassword] = useState('')
-  // const navigate = useNavigate()
+  const { loginUser, loading, error } = useLogin()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
-  const handleLogin = (values) => {
-    console.log(values)
+  const handleLogin = async (e) => {
+    e.preventDefault()
+    const values = { email, password }
+    console.log('Attempting login with values:', values)
+
+    await loginUser(values)
+
+    // Додамо перевірку на помилку або редірект на іншу сторінку після успішного входу
+    if (!error) {
+      navigate('/personal-cabinet') // Змінити на бажаний маршрут
+    }
   }
 
   return (
@@ -41,24 +51,28 @@ const UserLogin = () => {
             type="email"
             placeholder="Email address"
             className="user-login-container-form-email"
-            // onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
           <input
             type="password"
             placeholder="Password"
             className="user-login-container-form-password"
-            // onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
 
-          <div
+          <button
+            type="submit"
             className="user-login-container-form-button"
-            onClick={handleLogin}
+            disabled={loading} // Заблокувати кнопку при завантаженні
           >
-            Log in
-          </div>
+            {loading ? 'Logging in...' : 'Log in'}
+          </button>
         </form>
+
+        {error && <p className="user-login-error">{error}</p>}
+
         <p className="user-login-container-login">
           No account yet?{' '}
           <Link to="/signup">
