@@ -7,13 +7,15 @@ import PhoneSignUp from './pages/PhoneSignUp/PhoneSignUp'
 import LogIn from './pages/LogIn/LogIn'
 import PhoneLogIn from './pages/PhoneLogIn/PhoneLogIn'
 import PersonalCabinet from './pages/PersonalCabinet/PersonalCabinet'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
   return (
     <div>
       <Router>
         <NavBar />
-
+        <ToastContainer />
         <Routes>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/phone-signup" element={<PhoneSignUp />} />

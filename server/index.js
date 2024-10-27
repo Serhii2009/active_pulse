@@ -3,6 +3,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const authRouter = require('./routes/authRoute')
+require('dotenv').config()
+
 const app = express()
 
 // 1) MIDDLEWARES
@@ -14,9 +16,7 @@ app.use('/api/auth', authRouter)
 
 // 3) MONGO DB CONNECTION
 mongoose
-  .connect(
-    'mongodb+srv://Serhii:-C2Jfbw7M7fhc7d@activepulse.y9hma.mongodb.net/users'
-  )
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB!'))
   .catch((error) => console.error('Failed to connect to MongoDB:', error))
 

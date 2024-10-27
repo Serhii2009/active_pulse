@@ -1,13 +1,16 @@
 import './Sign.css'
 import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom'
+import useSignup from '../../hooks/useSignup'
 
 const Sign = () => {
+  const { registerUser } = useSignup()
+
   const handleRegister = (event) => {
-    event.preventDefault() // Запобігає перезавантаженню сторінки
-    const formData = new FormData(event.target) // Отримує дані форми
-    const values = Object.fromEntries(formData.entries()) // Конвертує в об’єкт
-    console.log(values) // Виводить значення в консоль
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const values = Object.fromEntries(formData.entries())
+    registerUser(values) // Виклик функції для надсилання запиту
   }
 
   return (
