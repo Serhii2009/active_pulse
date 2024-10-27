@@ -1,34 +1,16 @@
 import './UserLogin.css'
 import { assets } from '../../assets/assets'
-import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import axios from 'axios'
+import { Link } from 'react-router-dom'
+// import { useState } from 'react'
+// import axios from 'axios'
 
 const UserLogin = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const navigate = useNavigate()
+  // const [email, setEmail] = useState('')
+  // const [password, setPassword] = useState('')
+  // const navigate = useNavigate()
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    try {
-      const result = await axios.post('http://localhost:3001/login', {
-        email,
-        password,
-      })
-      console.log(result)
-
-      // Перевіряємо, чи отримали ми токен
-      if (result.data.token) {
-        // Зберігаємо токен у localStorage
-        localStorage.setItem('token', result.data.token)
-        navigate('/personal-cabinet') // Перенаправляємо на головну сторінку
-      } else {
-        console.error(result.data) // Виводимо помилку, якщо не отримали токен
-      }
-    } catch (err) {
-      console.log(err)
-    }
+  const handleLogin = (values) => {
+    console.log(values)
   }
 
   return (
@@ -54,25 +36,25 @@ const UserLogin = () => {
           </Link>
         </div>
 
-        <form className="user-login-container-form" onSubmit={handleSubmit}>
+        <form className="user-login-container-form" onSubmit={handleLogin}>
           <input
             type="email"
             placeholder="Email address"
             className="user-login-container-form-email"
-            onChange={(e) => setEmail(e.target.value)}
+            // onChange={(e) => setEmail(e.target.value)}
             required
           />
           <input
             type="password"
             placeholder="Password"
             className="user-login-container-form-password"
-            onChange={(e) => setPassword(e.target.value)}
+            // onChange={(e) => setPassword(e.target.value)}
             required
           />
 
           <div
             className="user-login-container-form-button"
-            onClick={handleSubmit}
+            onClick={handleLogin}
           >
             Log in
           </div>

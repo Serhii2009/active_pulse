@@ -111,10 +111,9 @@
   height: 48px;
   border-radius: 24px;
   background-color: #ff6f61;
-  padding-top: 14px;
-  padding-left: 96px;
   font-size: 16px;
   font-weight: 500;
+  border: none;
   color: #ffffff;
   outline: none;
   cursor: pointer;
@@ -206,7 +205,6 @@
 
   .sign-container-form-button {
     width: 324px;
-    padding-left: 132px;
   }
 
   .sign-container-policy {

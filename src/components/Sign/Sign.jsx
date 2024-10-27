@@ -1,24 +1,13 @@
 import './Sign.css'
 import { assets } from '../../assets/assets'
-import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const Sign = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const navigate = useNavigate()
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    axios
-      .post('http://localhost:3001/register', { name, email, password }) // Передаємо об'єкт з даними
-      .then((result) => {
-        console.log(result)
-        navigate('/login')
-      })
-      .catch((err) => console.log(err))
+  const handleRegister = (event) => {
+    event.preventDefault() // Запобігає перезавантаженню сторінки
+    const formData = new FormData(event.target) // Отримує дані форми
+    const values = Object.fromEntries(formData.entries()) // Конвертує в об’єкт
+    console.log(values) // Виводить значення в консоль
   }
 
   return (
@@ -44,34 +33,34 @@ const Sign = () => {
           </Link>
         </div>
 
-        <form className="sign-container-form" onSubmit={handleSubmit}>
+        <form className="sign-container-form" onSubmit={handleRegister}>
           <input
-            type="name"
+            type="text"
+            name="name"
             placeholder="Name"
             className="sign-container-form-name"
-            onChange={(e) => setName(e.target.value)}
             required
           />
 
           <input
             type="email"
+            name="email"
             placeholder="Email address"
             className="sign-container-form-email"
-            onChange={(e) => setEmail(e.target.value)}
             required
           />
 
           <input
             type="password"
+            name="password"
             placeholder="Password"
             className="sign-container-form-password"
-            onChange={(e) => setPassword(e.target.value)}
             required
           />
 
-          <div className="sign-container-form-button" onClick={handleSubmit}>
+          <button type="submit" className="sign-container-form-button">
             Sign up
-          </div>
+          </button>
         </form>
         <p className="sign-container-policy">
           By creating an account, you accept our <span>Terms of Service</span>{' '}
