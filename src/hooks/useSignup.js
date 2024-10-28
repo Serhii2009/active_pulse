@@ -13,7 +13,7 @@ const useSignup = () => {
       setError(null)
       setLoading(true)
       const res = await fetch(
-        'https://active-pulse-frontend.onrender.com/api/auth/signup',
+        'https://active-pulse-server.onrender.com/api/auth/signup',
         {
           method: 'POST',
           headers: {

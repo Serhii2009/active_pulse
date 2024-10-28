@@ -13,7 +13,7 @@ const useLogin = () => {
       setError(null)
       setLoading(true)
       const res = await fetch(
-        'https://active-pulse-frontend.onrender.com/api/auth/login',
+        'https://active-pulse-server.onrender.com/api/auth/login',
         {
           method: 'POST',
           headers: {
