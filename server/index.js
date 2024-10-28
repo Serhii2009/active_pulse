@@ -8,7 +8,11 @@ require('dotenv').config()
 const app = express()
 
 // 1) MIDDLEWARES
-app.use(cors())
+app.use(
+  cors({
+    origin: 'https://active-pulse-frontend.onrender.com', // посилання на фронтенд
+  })
+)
 app.use(express.json())
 
 // 2) ROUTE
