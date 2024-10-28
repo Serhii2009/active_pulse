@@ -8,12 +8,7 @@ require('dotenv').config()
 const app = express()
 
 // 1) MIDDLEWARES
-app.use(
-  cors({
-    origin: 'https://active-pulse-frontend.onrender.com', // посилання на фронтенд
-    credentials: true,
-  })
-)
+app.use(cors())
 app.use(express.json())
 
 // 2) ROUTE
@@ -26,7 +21,9 @@ mongoose
   .catch((error) => console.error('Failed to connect to MongoDB:', error))
 
 // 4) GLOBAL ERROR HANDLER
-app.use((err, res) => {
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
+  // добавьте 'req' и 'next'
   console.error('Global error handler:', err) // Логування помилки
   err.statusCode = err.statusCode || 500
   err.status = err.status || 'error'
@@ -40,7 +37,7 @@ app.use((err, res) => {
 })
 
 //5) SERVER
-const PORT = process.env.PORT || 3000
+const PORT = 3000
 app.listen(PORT, () => {
   console.log(`App is running on ${PORT}`)
 })

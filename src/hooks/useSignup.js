@@ -12,17 +12,13 @@ const useSignup = () => {
     try {
       setError(null)
       setLoading(true)
-      const res = await fetch(
-        'https://active-pulse-server.onrender.com/api/auth/signup',
-        {
-          // Змінено URL
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(values),
-        }
-      )
+      const res = await fetch('http://localhost:3000/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
 
       const data = await res.json()
       console.log('Response data:', data)

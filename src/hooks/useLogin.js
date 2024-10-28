@@ -12,24 +12,22 @@ const useLogin = () => {
     try {
       setError(null)
       setLoading(true)
-      const res = await fetch(
-        'https://active-pulse-server.onrender.com/api/auth/login',
-        {
-          // Змінено URL
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(values),
-        }
-      )
+      const res = await fetch('http://localhost:3000/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
 
       const data = await res.json()
       console.log('Response data:', data)
       if (res.status === 200) {
+        // для входу зазвичай використовується статус 200
         toast.success(data.message)
         login(data.token, data.user)
       } else if (res.status === 401) {
+        // додано статус для невірного входу
         setError(data.message)
         toast.error(data.message)
       } else {
@@ -42,6 +40,7 @@ const useLogin = () => {
       setLoading(false)
     }
   }
+
   return { loading, error, loginUser }
 }
 
