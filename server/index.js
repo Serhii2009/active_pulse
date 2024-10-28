@@ -8,7 +8,11 @@ require('dotenv').config()
 const app = express()
 
 // 1) MIDDLEWARES
-app.use(cors())
+app.use(
+  cors({
+    origin: 'https://active-pulse-frontend.onrender.com',
+  })
+)
 app.use(express.json())
 
 // 2) ROUTE
@@ -37,7 +41,7 @@ app.use((err, req, res, next) => {
 })
 
 //5) SERVER
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
   console.log(`App is running on ${PORT}`)
 })
