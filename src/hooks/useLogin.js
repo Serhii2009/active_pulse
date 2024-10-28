@@ -13,7 +13,7 @@ const useLogin = () => {
       setError(null)
       setLoading(true)
       const res = await fetch(
-        'https://active-pulse-fit.netlify.app//api/auth/login',
+        'http://active-pulse-fit.netlify.app//api/auth/login',
         {
           method: 'POST',
           headers: {
