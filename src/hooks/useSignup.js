@@ -15,6 +15,7 @@ const useSignup = () => {
       const res = await fetch(
         'https://active-pulse-server.onrender.com/api/auth/signup',
         {
+          // Змінено URL
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
