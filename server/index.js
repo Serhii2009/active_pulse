@@ -11,6 +11,7 @@ const app = express()
 app.use(
   cors({
     origin: 'https://active-pulse-frontend.onrender.com', // посилання на фронтенд
+    credentials: true,
   })
 )
 app.use(express.json())
@@ -29,6 +30,8 @@ app.use((err, res) => {
   console.error('Global error handler:', err) // Логування помилки
   err.statusCode = err.statusCode || 500
   err.status = err.status || 'error'
+
+  console.error('Error:', err)
 
   res.status(err.statusCode).json({
     status: err.status,
