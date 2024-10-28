@@ -22,11 +22,11 @@ mongoose
 
 // 4) GLOBAL ERROR HANDLER
 app.use((err, res) => {
-  // req, next
-  err.statuCode = err.statuCode || 500
+  console.error('Global error handler:', err) // Логування помилки
+  err.statusCode = err.statusCode || 500
   err.status = err.status || 'error'
 
-  res.status(err.statuCode).json({
+  res.status(err.statusCode).json({
     status: err.status,
     message: err.message,
   })
