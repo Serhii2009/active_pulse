@@ -56,7 +56,7 @@ const App = () => {
           <Route
             path="/personal-cabinet"
             element={
-              isAuthenticated ? <PersonalCabinet /> : <Navigate to="/login" />
+              isAuthenticated ? <PersonalCabinet /> : <Navigate to="/" />
             }
           />
         </Routes>

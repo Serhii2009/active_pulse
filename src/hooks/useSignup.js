@@ -12,16 +12,20 @@ const useSignup = () => {
     try {
       setError(null)
       setLoading(true)
-      const res = await fetch(
-        'https://active-pulse-server.onrender.com/api/auth/signup',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(values),
-        }
-      )
+
+      const apiUrl =
+        // eslint-disable-next-line no-undef
+        process.env.NODE_ENV === 'production'
+          ? 'https://active-pulse-server.onrender.com/api/auth/signup'
+          : 'http://localhost:3000/api/auth/signup'
+
+      const res = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
 
       const data = await res.json()
       console.log('Response data:', data)

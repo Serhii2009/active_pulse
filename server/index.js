@@ -10,7 +10,10 @@ const app = express()
 // 1) MIDDLEWARES
 app.use(
   cors({
-    origin: 'https://active-pulse-frontend.onrender.com',
+    origin: [
+      'http://localhost:5173',
+      'https://active-pulse-frontend.onrender.com',
+    ],
   })
 )
 app.use(express.json())

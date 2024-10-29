@@ -1,13 +1,47 @@
 import './NavBar.css'
 import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { useAuth } from '../../contexts/AuthContext'
 
 const NavBar = () => {
   const [modal, setModal] = useState(false)
+  const [userModal, setUserModal] = useState(false)
+  const { isAuthenticated, logout } = useAuth()
+  const modalRef = useRef(null) // Реф для модалки юзера
+  const userModalRef = useRef(null)
+
   const toggleModal = () => {
     setModal(!modal)
   }
+
+  const toggleUserModal = () => {
+    setUserModal(!userModal) // Перемикає модальне вікно юзера
+  }
+
+  const handleClickOutside = (event) => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      setModal(false)
+    }
+    if (userModalRef.current && !userModalRef.current.contains(event.target)) {
+      setUserModal(false)
+    }
+  }
+
+  useEffect(() => {
+    // Додаємо обробник подій
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      // Видаляємо обробник подій при розмонтуванні
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setUserModal(false)
+    }
+  }, [isAuthenticated])
   return (
     <div className="nav-bar">
       <div className="nav-bar-box">
@@ -32,36 +66,59 @@ const NavBar = () => {
 
         <div className="nav-bar_cta">
           <div className="nav-bar-buttons">
-            <Link to="/signup">
-              <div className="nav-bar-sign-up">Sign Up</div>
-            </Link>
+            {isAuthenticated ? (
+              <>
+                <div className="nav-bar-your-programs">Your programs</div>
 
-            <Link to="/login">
-              <div className="nav-bar-log-in">Log In</div>
-            </Link>
+                <img
+                  src={assets.user_icon}
+                  alt="User Account"
+                  className="nav-bar-user-icon"
+                  onClick={toggleUserModal}
+                />
+              </>
+            ) : (
+              <>
+                <Link to="/signup">
+                  <div className="nav-bar-sign-up">Sign Up</div>
+                </Link>
+                <Link to="/login">
+                  <div className="nav-bar-log-in">Log In</div>
+                </Link>
+              </>
+            )}
           </div>
-          <img
-            onClick={toggleModal}
-            src={assets.side_menu}
-            alt=""
-            className="nav-bar-side-menu"
-          />
+
+          {!isAuthenticated && (
+            <img
+              onClick={toggleModal}
+              src={assets.side_menu}
+              alt=""
+              className="nav-bar-side-menu"
+            />
+          )}
         </div>
 
         {modal && (
-          <div className="nav-bar-modal">
+          <div className="nav-bar-modal" ref={modalRef}>
             <div className="nav-bar-modal-component">
               <div className="nav-bar-modal-list">
                 <li>Training programs</li>
                 <li>News and articles</li>
                 <li>FAQ</li>
               </div>
-              <img
-                onClick={toggleModal}
-                className="nav-bar-modal-close"
-                src={assets.menu_bar_close}
-                alt=""
-              />
+            </div>
+          </div>
+        )}
+
+        {userModal && (
+          <div className="user-modal" ref={userModalRef}>
+            <div className="user-modal-content">
+              <ul className="user-modal-list">
+                <li>Profile</li>
+                <li>Settings</li>
+                <li onClick={logout}>Logout</li>
+              </ul>
             </div>
           </div>
         )}
