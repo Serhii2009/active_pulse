@@ -12,6 +12,14 @@ import benefits4 from './benefits4.png'
 import benefits5 from './benefits5.png'
 import arrow_top from './arrow_top.svg'
 import arrow_down from './arrow_down.svg'
+import user from './user.svg'
+import user1 from './user1.svg'
+import user2 from './user2.svg'
+import user3 from './user3.svg'
+import user4 from './user4.svg'
+import user5 from './user5.svg'
+import men_photo from './men_photo.png'
+import footer_logo from './footer_logo.svg'
 
 export const assets = {
   logo_desctop,
@@ -28,4 +36,12 @@ export const assets = {
   benefits5,
   arrow_top,
   arrow_down,
+  user,
+  user1,
+  user2,
+  user3,
+  user4,
+  user5,
+  men_photo,
+  footer_logo,
 }
