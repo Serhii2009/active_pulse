@@ -1,7 +1,12 @@
+import MainPage from '../../components/MainPage/MainPage'
 import './HomePage.css'
 
 const HomePage = () => {
-  return <div>HomePage</div>
+  return (
+    <div>
+      <MainPage />
+    </div>
+  )
 }
 
 export default HomePage
