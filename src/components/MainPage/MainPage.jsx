@@ -70,7 +70,9 @@ const MainPage = () => {
           supportive community. Improve strength, endurance, and wellness while
           connecting with others. Join us and achieve greatness!
         </p>
-        <img src={assets.activites_icons} alt="" />
+        <div className="main-page-about-us-img">
+          <img src={assets.activites_icons} alt="" />
+        </div>
       </div>
 
       <div className="main-page-benefits">
