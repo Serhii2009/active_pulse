@@ -15,6 +15,7 @@ import PersonalCabinet from './pages/PersonalCabinet/PersonalCabinet'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useAuth } from './contexts/AuthContext'
+import TrainingPrograms from './pages/TrainingPrograms/TrainingPrograms'
 
 const App = () => {
   const { isAuthenticated } = useAuth()
@@ -59,6 +60,8 @@ const App = () => {
               isAuthenticated ? <PersonalCabinet /> : <Navigate to="/" />
             }
           />
+
+          <Route path="/training-programs" element={<TrainingPrograms />} />
         </Routes>
       </Router>
     </div>

@@ -59,7 +59,9 @@ const NavBar = () => {
         </Link>
 
         <ul className="nav-bar-list">
-          <li className="nav-bar-list-element">Training programs</li>
+          <Link to="/training-programs">
+            <li className="nav-bar-list-element">Training programs</li>
+          </Link>
           <li className="nav-bar-list-element">News and articles</li>
           <li className="nav-bar-list-element">FAQ</li>
         </ul>

@@ -2,6 +2,7 @@ import './MainPage.css'
 import { assets } from '../../assets/assets'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
+import { Link } from 'react-router-dom'
 
 const cardData = [
   {
@@ -122,8 +123,19 @@ const MainPage = () => {
     }
   }
 
+  const scrollToSection = (id) => {
+    if (id === 'main-screen') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      const section = document.getElementById(id)
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
+
   return (
-    <div className="main-page">
+    <div id="main-screen" className="main-page">
       <div className="main-page-cta">
         <div className="main-page-group-info">
           <h1>Achieve Better Health and Strength</h1>
@@ -133,7 +145,9 @@ const MainPage = () => {
             people. Achieve your goals while enjoying social interaction and
             community support.
           </p>
-          <button>Get Started Today</button>
+          <Link to="/training-programs">
+            <button>Get Started Today</button>
+          </Link>
         </div>
         <img
           src={assets.man_woman_run}
@@ -147,7 +161,7 @@ const MainPage = () => {
         />
       </div>
 
-      <div className="main-page-about-us">
+      <div id="about-us" className="main-page-about-us">
         <h2>About Us</h2>
         <p className="main-page-about-us-text-mobile">
           At <span>ACTIVE PULSE,</span> fitness is a lifestyle. We empower
@@ -173,7 +187,7 @@ const MainPage = () => {
         </div>
       </div>
 
-      <div className="main-page-benefits">
+      <div id="benefits" className="main-page-benefits">
         <h2>Benefits</h2>
         <div className="main-benefits-card">
           <img
@@ -196,7 +210,7 @@ const MainPage = () => {
         </div>
       </div>
 
-      <div className="main-page-user-reviews">
+      <div id="user-reviews" className="main-page-user-reviews">
         <h2>User Reviews</h2>
         <div className="main-user-reviews">
           <img
@@ -239,7 +253,7 @@ const MainPage = () => {
         </div>
       </div>
 
-      <div className="main-page-feedback-form">
+      <div id="feedback-form" className="main-page-feedback-form">
         <h2>Feedback Form</h2>
         <div className="main-page-feedback-form-wrapper">
           <img
@@ -312,11 +326,17 @@ const MainPage = () => {
             </ul>
 
             <ul className="main-page-footer-links-landing">
-              <li>About us</li>
-              <li>Benefits</li>
-              <li>User Reviews</li>
-              <li>Feedback Form</li>
-              <li>Contacts</li>
+              <li onClick={() => scrollToSection('main-screen')}>
+                Main Screen
+              </li>
+              <li onClick={() => scrollToSection('about-us')}>About us</li>
+              <li onClick={() => scrollToSection('benefits')}>Benefits</li>
+              <li onClick={() => scrollToSection('user-reviews')}>
+                User Reviews
+              </li>
+              <li onClick={() => scrollToSection('feedback-form')}>
+                Feedback Form
+              </li>
             </ul>
           </div>
 
