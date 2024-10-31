@@ -135,7 +135,16 @@ const MainPage = () => {
           </p>
           <button>Get Started Today</button>
         </div>
-        <img src={assets.man_woman_run} alt="" />
+        <img
+          src={assets.man_woman_run}
+          alt=""
+          className="man_woman_run_tablet"
+        />
+        <img
+          src={assets.man_woman_run_desktop}
+          alt=""
+          className="man_woman_run_desktop"
+        />
       </div>
 
       <div className="main-page-about-us">
@@ -147,17 +156,20 @@ const MainPage = () => {
           connecting with others. Join us and achieve greatness!
         </p>
 
-        <p className="main-page-about-us-text-desktop">
-          At <span>ACTIVE PULSE,</span> we believe fitness is a lifestyle, not
-          just a routine. Our mission is to empower individuals at every level
-          to achieve their health goals through personalized training programs
-          and a supportive community. We focus on holistic well-being, helping
-          you improve strength, endurance, and overall wellness while connecting
-          with like-minded individuals. Join us on your journey to becoming the
-          best version of yourself, and let’s achieve greatness together!
-        </p>
-        <div className="main-page-about-us-img">
-          <img src={assets.activites_icons} alt="" />
+        <div className="main-page-about-us-text-desktop-container">
+          <p className="main-page-about-us-text-desktop">
+            At <span>ACTIVE PULSE,</span> we believe fitness is a lifestyle, not
+            just a routine. Our mission is to empower individuals at every level
+            to achieve their health goals through personalized training programs
+            and a supportive community. We focus on holistic well-being, helping
+            you improve strength, endurance, and overall wellness while
+            connecting with like-minded individuals. Join us on your journey to
+            becoming the best version of yourself, and let’s achieve greatness
+            together!
+          </p>
+          <div className="main-page-about-us-img">
+            <img src={assets.activites_icons} alt="" />
+          </div>
         </div>
       </div>
 
@@ -194,26 +206,28 @@ const MainPage = () => {
             className="main-reviews-arrow-top"
           />
 
-          <div className="main-user-reviews-card1">
-            <div className="main-user-reviews-info">
-              <img
-                src={testimonialsData[testimonialIndex].image}
-                alt="Reviewer"
-              />
-              <h3>{testimonialsData[testimonialIndex].name}</h3>
+          <div className="main-user-reviews-cards">
+            <div className="main-user-reviews-card1">
+              <div className="main-user-reviews-info">
+                <img
+                  src={testimonialsData[testimonialIndex].image}
+                  alt="Reviewer"
+                />
+                <h3>{testimonialsData[testimonialIndex].name}</h3>
+              </div>
+              <p>{testimonialsData[testimonialIndex].text}</p>
             </div>
-            <p>{testimonialsData[testimonialIndex].text}</p>
-          </div>
 
-          <div className="main-user-reviews-card2">
-            <div className="main-user-reviews-info">
-              <img
-                src={testimonialsData[testimonialIndex + 1].image}
-                alt="Reviewer"
-              />
-              <h3>{testimonialsData[testimonialIndex + 1].name}</h3>
+            <div className="main-user-reviews-card2">
+              <div className="main-user-reviews-info">
+                <img
+                  src={testimonialsData[testimonialIndex + 1].image}
+                  alt="Reviewer"
+                />
+                <h3>{testimonialsData[testimonialIndex + 1].name}</h3>
+              </div>
+              <p>{testimonialsData[testimonialIndex + 1].text}</p>
             </div>
-            <p>{testimonialsData[testimonialIndex + 1].text}</p>
           </div>
 
           <img
@@ -261,9 +275,15 @@ const MainPage = () => {
               type="submit"
               className="main-page-feedback-form-contact-submit"
             >
-              Submit now
+              Sent
             </button>
           </form>
+
+          <img
+            src={assets.men_photo_descktop}
+            alt=""
+            className="main-page-feedback-form-men-photo-descktop"
+          />
         </div>
       </div>
 

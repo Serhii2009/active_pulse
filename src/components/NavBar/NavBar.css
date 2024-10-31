@@ -25,6 +25,14 @@
 
 .nav-bar-list-element {
   cursor: pointer;
+  color: #747187;
+}
+
+.nav-bar-list-element:hover {
+  transform: scale(1.02);
+  transition: 0.3s;
+  color: #212121;
+  font-weight: 500;
 }
 
 .nav-bar-buttons {
