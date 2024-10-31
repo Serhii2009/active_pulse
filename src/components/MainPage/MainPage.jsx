@@ -125,23 +125,36 @@ const MainPage = () => {
   return (
     <div className="main-page">
       <div className="main-page-cta">
-        <h1>Achieve Better Health and Strength</h1>
-        <p>
-          Unlock personalized fitness programs that help you improve your
-          health, build strength and endurance, and connect with like-minded
-          people. Achieve your goals while enjoying social interaction and
-          community support.
-        </p>
-        <button>Get Started Today</button>
+        <div className="main-page-group-info">
+          <h1>Achieve Better Health and Strength</h1>
+          <p>
+            Unlock personalized fitness programs that help you improve your
+            health, build strength and endurance, and connect with like-minded
+            people. Achieve your goals while enjoying social interaction and
+            community support.
+          </p>
+          <button>Get Started Today</button>
+        </div>
+        <img src={assets.man_woman_run} alt="" />
       </div>
 
       <div className="main-page-about-us">
         <h2>About Us</h2>
-        <p>
+        <p className="main-page-about-us-text-mobile">
           At <span>ACTIVE PULSE,</span> fitness is a lifestyle. We empower
           everyone to reach their health goals with personalized training and a
           supportive community. Improve strength, endurance, and wellness while
           connecting with others. Join us and achieve greatness!
+        </p>
+
+        <p className="main-page-about-us-text-desktop">
+          At <span>ACTIVE PULSE,</span> we believe fitness is a lifestyle, not
+          just a routine. Our mission is to empower individuals at every level
+          to achieve their health goals through personalized training programs
+          and a supportive community. We focus on holistic well-being, helping
+          you improve strength, endurance, and overall wellness while connecting
+          with like-minded individuals. Join us on your journey to becoming the
+          best version of yourself, and let’s achieve greatness together!
         </p>
         <div className="main-page-about-us-img">
           <img src={assets.activites_icons} alt="" />

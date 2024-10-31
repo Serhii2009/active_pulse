@@ -29,6 +29,10 @@
   cursor: pointer;
 }
 
+.main-page-cta img {
+  display: none;
+}
+
 /* ---------- */
 
 .main-page-about-us {
@@ -41,15 +45,19 @@
   font-weight: 700;
 }
 
-.main-page-about-us p {
+.main-page-about-us-text-mobile {
   margin-top: 40px;
   color: #212121;
   font-size: 20px;
   font-weight: 400;
 }
 
-.main-page-about-us span {
+.main-page-about-us-text-mobile span {
   font-weight: 600;
+}
+
+.main-page-about-us-text-desktop {
+  display: none;
 }
 
 .main-page-about-us-img {
@@ -319,3 +327,306 @@
 }
 
 /* Tablet display */
+
+@media only screen and (min-width: 768px) {
+  .main-page-cta {
+    margin: 70px 50px 0;
+    display: flex;
+    gap: 60px;
+  }
+
+  .main-page-cta h1 {
+    font-size: 40px;
+  }
+
+  .main-page-cta p {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  .main-page-cta img {
+    display: flex;
+  }
+
+  .main-page-cta button {
+    margin-top: 40px;
+    padding: 16px 20px;
+    font-size: 22px;
+  }
+
+  /* ---------- */
+
+  .main-page-about-us {
+    margin: 100px 76px 0 50px;
+  }
+
+  .main-page-about-us h2 {
+    font-size: 34px;
+  }
+
+  .main-page-about-us-text-desktop {
+    display: block;
+    margin-top: 80px;
+    font-size: 24px;
+  }
+
+  .main-page-about-us-text-mobile {
+    display: none;
+  }
+
+  .main-page-about-us-text-desktop span {
+    font-weight: 600;
+  }
+
+  .main-page-about-us-img img {
+    margin-top: 50px;
+    width: 340px;
+    height: 324px;
+  }
+
+  /* ---------- */
+
+  .main-page-benefits {
+    margin: 100px 60px 0;
+  }
+
+  .main-page-benefits h2 {
+    font-size: 34px;
+    padding-left: 10px;
+  }
+
+  .main-benefits-card {
+    margin-top: 80px;
+    display: flex;
+  }
+
+  .main-benefits-arrow-top {
+    margin-right: 50px;
+    transform: rotate(-90deg);
+  }
+
+  .main-benefits-card-item h3 {
+    font-size: 28px;
+  }
+
+  .main-benefits-card-item p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .main-benefits-card-item img {
+    text-align: center;
+    width: 352px;
+    height: 300px;
+  }
+
+  .main-benefits-arrow-down {
+    margin-left: 50px;
+    transform: rotate(-90deg);
+  }
+
+  /* ---------- */
+
+  /* .main-page-user-reviews {
+    margin: 70px 22px 0;
+  }
+
+  .main-page-user-reviews h2 {
+    color: #212121;
+    font-size: 24px;
+    font-weight: 700;
+    padding-left: 10px;
+  }
+
+  .main-user-reviews {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .main-reviews-arrow-down {
+    margin-top: 50px;
+    cursor: pointer;
+  }
+
+  .main-user-reviews-card1 {
+    margin-top: 50px;
+    padding-left: 36px;
+    text-align: left;
+  }
+  .main-user-reviews-card1 p {
+    margin-top: 20px;
+    margin-right: 37px;
+  }
+
+  .main-user-reviews-card2 {
+    margin-top: 30px;
+    padding-left: 36px;
+    text-align: left;
+  }
+  .main-user-reviews-card2 p {
+    margin-top: 20px;
+    margin-right: 37px;
+  }
+
+  .main-user-reviews-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  } */
+
+  /* ---------- */
+
+  /* .main-page-feedback-form {
+    margin: 70px 22px 0;
+  }
+
+  .main-page-feedback-form h2 {
+    color: #212121;
+    font-size: 24px;
+    font-weight: 700;
+    padding-left: 10px;
+    margin-bottom: 40px;
+  }
+
+  .main-page-feedback-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+  }
+
+  .main-page-feedback-form-men-photo {
+    position: absolute;
+  }
+
+  .main-page-feedback-form-contact {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 24px 28px;
+  }
+
+  .main-page-feedback-form-contact label {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  .main-page-feedback-form-contact input {
+    border: 1.4px solid #ffffff;
+    width: 265px;
+    height: 50px;
+    padding-left: 16px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    margin-top: 4px;
+  }
+
+  .main-page-feedback-form-contact input::placeholder {
+    color: #ffffff;
+  }
+
+  .main-page-feedback-form-contact textarea {
+    width: 270px;
+    border: 1.4px solid #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    margin-top: 10px;
+  }
+
+  .main-page-feedback-form-contact textarea::placeholder {
+    color: #ffffff;
+  }
+
+  .main-page-feedback-form-contact-submit {
+    border: none;
+    color: #ffffff;
+    border-radius: 20px;
+    background-color: #4bcc53;
+    font-size: 18px;
+    width: 160px;
+    height: 53px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 52px;
+    margin-top: 20px;
+  }
+
+  .main-page-feedback-form-contact-submit:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+  } */
+
+  /* ---------- */
+
+  /* .main-page-footer {
+    margin-top: 70px;
+    background-color: #2e7d32;
+    color: #f9fafb;
+    font-size: 12px;
+    height: 500px;
+  }
+
+  .main-page-footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .main-page-footer-logo {
+    margin-left: 12px;
+    margin-top: 25px;
+  }
+
+  .main-page-footer-info {
+    display: flex;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 14px;
+    gap: 30px;
+    align-items: flex-end;
+  }
+
+  .main-page-footer-info-contacts {
+    list-style: none;
+    text-align: left;
+  }
+
+  .main-page-footer-info-contacts li:last-child {
+    margin-top: 10px;
+  }
+
+  .main-page-footer-links {
+    display: flex;
+    margin-top: 50px;
+    gap: 92px;
+  }
+
+  .main-page-footer-links-landing,
+  .main-page-footer-links-pages {
+    list-style: none;
+    text-align: center;
+  }
+
+  .main-page-footer-links-landing li,
+  .main-page-footer-links-pages li {
+    margin-top: 20px;
+  }
+
+  .main-page-footer-policy {
+    margin-top: 60px;
+  } */
+}

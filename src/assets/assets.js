@@ -20,6 +20,7 @@ import user4 from './user4.svg'
 import user5 from './user5.svg'
 import men_photo from './men_photo.png'
 import footer_logo from './footer_logo.svg'
+import man_woman_run from './man_woman_run.svg'
 
 export const assets = {
   logo_desctop,
@@ -44,4 +45,5 @@ export const assets = {
   user5,
   men_photo,
   footer_logo,
+  man_woman_run,
 }
