@@ -49,6 +49,7 @@ const UserLogin = () => {
         <form className="user-login-container-form" onSubmit={handleLogin}>
           <input
             type="email"
+            name="email"
             placeholder="Email address"
             className="user-login-container-form-email"
             onChange={(e) => setEmail(e.target.value)}
@@ -56,6 +57,7 @@ const UserLogin = () => {
           />
           <input
             type="password"
+            name="password"
             placeholder="Password"
             className="user-login-container-form-password"
             onChange={(e) => setPassword(e.target.value)}

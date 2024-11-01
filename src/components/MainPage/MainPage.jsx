@@ -320,7 +320,9 @@ const MainPage = () => {
 
           <div className="main-page-footer-links">
             <ul className="main-page-footer-links-pages">
-              <li>Training programs</li>
+              <Link to="/training-programs">
+                <li>Training programs</li>
+              </Link>
               <li>News and articles</li>
               <li>FAQ</li>
             </ul>
