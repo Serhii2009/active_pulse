@@ -369,144 +369,19 @@
 
   /* ---------- */
 
-  .main-page-about-us {
-    margin: 100px 76px 0 50px;
-  }
-
-  .main-page-about-us h2 {
-    font-size: 34px;
-  }
-
-  .main-page-about-us-text-desktop {
-    display: block;
-    margin-top: 80px;
-    font-size: 24px;
-  }
-
-  .main-page-about-us-text-mobile {
-    display: none;
-  }
-
-  .main-page-about-us-text-desktop span {
-    font-weight: 600;
-  }
-
-  .main-page-about-us-img img {
-    margin-top: 50px;
-    width: 340px;
-    height: 324px;
-  }
-
-  /* ---------- */
-
-  .main-page-benefits {
-    margin: 100px 0;
-  }
-
-  .main-page-benefits h2 {
-    font-size: 34px;
-    padding-left: 0;
-    margin-left: 50px;
-  }
-
-  .main-benefits-card {
-    display: flex;
-    margin: 80px 60px 0;
-  }
-
-  .main-benefits-arrow-top {
-    margin-right: 50px;
-    transform: rotate(-90deg);
-  }
-
   .main-benefits-card-item {
-    padding: 40px 18px;
+    margin: 40px 80px;
   }
 
-  .main-benefits-card-item h3 {
-    font-size: 28px;
+  /* ------------------- */
+
+  .main-page-footer-links {
+    gap: 232px;
   }
 
-  .main-benefits-card-item p {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .main-benefits-card-item img {
-    text-align: center;
-    width: 352px;
-    height: 300px;
-  }
-
-  .main-benefits-arrow-down {
+  .main-page-footer-info {
+    gap: 100px;
     margin-left: 50px;
-    transform: rotate(-90deg);
-    margin-top: 0;
-  }
-
-  /* ---------- */
-
-  .main-page-user-reviews {
-    margin: 100px 0;
-  }
-
-  .main-page-user-reviews h2 {
-    font-size: 34px;
-    padding-left: 0;
-    margin-left: 50px;
-  }
-
-  .main-user-reviews {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .main-user-reviews-cards {
-    display: block;
-    margin-left: 50px;
-    margin-right: -10px;
-  }
-
-  .main-reviews-arrow-top {
-    margin-left: 50px;
-    transform: rotate(-90deg);
-    margin-top: 0;
-  }
-
-  .main-reviews-arrow-down {
-    margin-left: 50px;
-    transform: rotate(-90deg);
-    margin-top: 0;
-  }
-
-  .main-user-reviews-card1 {
-    margin-top: 50px;
-    padding-left: 36px;
-    text-align: left;
-    width: 570px;
-  }
-  .main-user-reviews-card1 p {
-    margin-top: 20px;
-    margin-right: 37px;
-  }
-
-  .main-user-reviews-card2 {
-    margin-top: 30px;
-    padding-left: 36px;
-    text-align: left;
-    width: 570px;
-  }
-  .main-user-reviews-card2 p {
-    margin-top: 20px;
-    margin-right: 37px;
-  }
-
-  .main-user-reviews-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
   }
 }
 
