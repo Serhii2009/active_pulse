@@ -749,6 +749,7 @@
   .main-benefits-arrow-down {
     margin-left: 90px;
     transform: rotate(-90deg);
+    margin-top: 0;
   }
 
   /* ---------- */
