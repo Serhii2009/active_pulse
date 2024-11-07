@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const authRouter = require('./routes/authRoute')
+const cardsRouter = require('./routes/cardRoute') // Імпортуємо новий маршрутизатор для карток
 require('dotenv').config()
 
 const app = express()
@@ -18,8 +19,11 @@ app.use(
 )
 app.use(express.json())
 
-// 2) ROUTE
+app.use('/uploads', express.static('uploads'))
+
+// 2) ROUTES
 app.use('/api/auth', authRouter)
+app.use('/api/cards', cardsRouter) // Додаємо маршрут для карток
 
 // 3) MONGO DB CONNECTION
 mongoose
@@ -30,12 +34,9 @@ mongoose
 // 4) GLOBAL ERROR HANDLER
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
-  // добавьте 'req' и 'next'
   console.error('Global error handler:', err) // Логування помилки
   err.statusCode = err.statusCode || 500
   err.status = err.status || 'error'
-
-  console.error('Error:', err)
 
   res.status(err.statusCode).json({
     status: err.status,
@@ -43,7 +44,7 @@ app.use((err, req, res, next) => {
   })
 })
 
-//5) SERVER
+// 5) SERVER
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
   console.log(`App is running on ${PORT}`)
